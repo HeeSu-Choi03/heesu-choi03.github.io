@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>최희수 · 백엔드 개발자 포트폴리오</title>
+<meta name="description" content="Spring Boot · Node.js 백엔드와 AWS 배포 · 운영 경험을 담은 최희수의 포트폴리오">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="cards">
+
+<header class="nav">
+  <a class="brand" href="#about">최희수</a>
+  <nav>
+    <a href="#projects">프로젝트</a>
+    <a href="#papers">논문</a>
+    <a href="#awards">수상 · 대회</a>
+    <a href="#resume">이력</a>
+  </nav>
+  <button id="export-btn" type="button">PDF로 내보내기</button>
+</header>
+
+<main>
+  <section id="about"></section>
+
+  <section id="projects">
+    <div class="section-head">
+      <h2>프로젝트</h2>
+      <div class="controls">
+        <div class="seg" id="filter" role="group" aria-label="프로젝트 분야">
+          <button type="button" data-filter="" aria-pressed="true">전체</button>
+          <button type="button" data-filter="백엔드" aria-pressed="false">백엔드</button>
+          <button type="button" data-filter="영상 · 그래픽스" aria-pressed="false">영상 · 그래픽스</button>
+          <button type="button" data-filter="게임" aria-pressed="false">게임</button>
+        </div>
+        <div class="seg" id="view" role="group" aria-label="보기 방식">
+          <button type="button" data-view="cards" aria-pressed="true">카드 보기</button>
+          <button type="button" data-view="flow" aria-pressed="false">이어보기</button>
+        </div>
+      </div>
+    </div>
+    <div id="project-list"></div>
+  </section>
+
+  <section id="papers"></section>
+  <section id="awards"></section>
+  <section id="resume"></section>
+</main>
+
+<footer class="site-footer">
+  <span>최희수 | 백엔드 개발자 포트폴리오 © 2026 Choi Heesu</span>
+  <a href="https://github.com/HeeSu-Choi03">GitHub ↗</a>
+  <a href="#about">맨 위로 ↑</a>
+</footer>
+
+<!-- PDF 내보내기 모드에서만 보이는 막대 -->
+<form id="export-bar" hidden>
+  <span id="export-count"></span>
+  <label><input type="radio" name="depth" value="brief" checked> 간략히</label>
+  <label><input type="radio" name="depth" value="full"> 자세히</label>
+  <label class="phone">연락처 <input type="tel" id="phone" placeholder="인쇄물에만 표시 (선택)" autocomplete="off"></label>
+  <button type="submit" class="primary">인쇄 / PDF 저장</button>
+  <button type="button" id="export-cancel">취소</button>
+</form>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

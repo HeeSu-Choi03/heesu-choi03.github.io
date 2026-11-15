@@ -1,0 +1,203 @@
+:root {
+  --ink: #1a1d21;
+  --sub: #5b6470;
+  --line: #e3e6ea;
+  --bg: #ffffff;
+  --soft: #f5f6f8;
+  --accent: #2457d6;
+  --accent-soft: #eaf0fd;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.7 "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3, h4, p, ul, dl, dd { margin: 0; }
+ul { padding: 0; list-style: none; }
+button { font: inherit; color: inherit; cursor: pointer; }
+[hidden] { display: none !important; }
+.print-only { display: none; }
+
+/* ---------- 상단 ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 20px;
+  padding: 12px max(16px, calc((100vw - 1040px) / 2));
+  background: rgba(255, 255, 255, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .brand { font-weight: 700; color: var(--ink); }
+.nav nav { display: flex; gap: 16px; margin-right: auto; font-size: 15px; }
+.nav nav a { color: var(--sub); }
+#export-btn, .primary {
+  padding: 7px 14px; border: 0; border-radius: 8px;
+  background: var(--ink); color: #fff; font-size: 14px; font-weight: 600;
+}
+
+main { max-width: 1040px; margin: 0 auto; padding: 0 16px 120px; }
+section { padding-top: 64px; }
+h2 { font-size: 26px; letter-spacing: -.02em; }
+
+/* ---------- 소개 ---------- */
+.eyebrow { color: var(--accent); font-weight: 700; font-size: 15px; }
+h1 { margin-top: 6px; font-size: clamp(28px, 5vw, 42px); line-height: 1.3; letter-spacing: -.03em; }
+.intro { margin-top: 16px; max-width: 680px; color: var(--sub); font-size: 17px; }
+.contact { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 15px; }
+.facts { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+.facts li { padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; }
+#about { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+.photo { flex: none; width: 168px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 16px; }
+@media (max-width: 640px) {
+  #about { flex-direction: column-reverse; align-items: flex-start; gap: 20px; }
+  .photo { width: 112px; }
+}
+
+/* ---------- 프로젝트 ---------- */
+.section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; }
+.seg { display: inline-flex; padding: 3px; background: var(--soft); border-radius: 9px; }
+.seg button { padding: 5px 12px; border: 0; border-radius: 7px; background: none; color: var(--sub); font-size: 14px; }
+.seg button[aria-pressed="true"] { background: #fff; color: var(--ink); font-weight: 600; box-shadow: 0 1px 2px rgba(0, 0, 0, .12); }
+
+#project-list { margin-top: 20px; display: grid; gap: 16px; }
+.project { position: relative; min-width: 0; padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.project h3 { font-size: 21px; letter-spacing: -.02em; }
+.meta { color: var(--sub); font-size: 14px; }
+.tagline { margin-top: 10px; }
+.role { margin-top: 10px; font-size: 15px; }
+.role b, .results > b { margin-right: 8px; color: var(--sub); font-size: 13px; }
+.chips { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.chips li { padding: 2px 9px; background: var(--accent-soft); color: var(--accent); border-radius: 6px; font-size: 13px; font-weight: 500; }
+.results { margin-top: 14px; font-size: 15px; }
+.results ul, .more ul { padding-left: 18px; list-style: disc; }
+.sub { margin-top: 20px; color: var(--sub); font-size: 13px; font-weight: 700; letter-spacing: .02em; }
+.solve { margin-top: 10px; padding-left: 14px; border-left: 3px solid var(--accent); }
+.solve h4 { font-size: 15.5px; line-height: 1.5; }
+.solve-body { margin-top: 6px; display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 14.5px; }
+.solve-body dt { color: var(--sub); font-weight: 600; }
+.more { margin-top: 18px; font-size: 14.5px; }
+.more summary { color: var(--accent); font-weight: 600; cursor: pointer; }
+.adr { width: 100%; margin-top: 8px; border-collapse: collapse; font-size: 13.5px; }
+.adr th, .adr td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.adr th { color: var(--sub); font-weight: 600; white-space: nowrap; }
+.adr td:first-child { font-weight: 600; white-space: nowrap; }
+.project footer { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; font-size: 14px; }
+.toggle { display: none; padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; font-size: 14px; }
+
+/* 카드 보기: 접힌 카드는 요약과 문제 제목만. 펼치면 한 줄을 다 쓴다 */
+@media screen {
+  .cards #project-list { grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); }
+  .cards .toggle { display: inline-block; }
+  .cards .project:not(.open) .solve-body,
+  .cards .project:not(.open) .more { display: none; }
+  .cards .project.open { grid-column: 1 / -1; }
+  .cards .project.open .more > summary { display: none; }
+}
+
+.shot { display: block; max-width: 100%; max-height: 360px; margin-top: 14px; border: 1px solid var(--line); border-radius: 10px; }
+
+/* ---------- 논문 · 수상 ---------- */
+.paper { margin-top: 20px; padding: 24px; border: 1px solid var(--line); border-radius: 14px; }
+.paper h3 { margin-top: 4px; font-size: 19px; line-height: 1.45; letter-spacing: -.02em; }
+.paper .solve-body { margin: 14px 0 12px; }
+.awards { margin-top: 12px; }
+.awards li { display: grid; grid-template-columns: 90px 1fr; gap: 0 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.awards li > :last-child { grid-column: 2; }
+
+.site-footer {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px;
+  padding: 28px 16px; border-top: 1px solid var(--line); color: var(--sub); font-size: 14px;
+}
+
+/* ---------- 이력 ---------- */
+.resume-grid { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 28px 40px; }
+#resume h3 { padding-bottom: 6px; border-bottom: 1px solid var(--line); font-size: 15px; }
+#resume dl { margin-top: 8px; display: grid; grid-template-columns: 140px 1fr; gap: 4px 12px; font-size: 15px; }
+#resume dt { color: var(--sub); }
+
+/* ---------- PDF 내보내기 모드 ---------- */
+.pick { display: none; }
+.exporting .pick {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-bottom: 10px; padding: 3px 10px;
+  background: var(--accent-soft); border-radius: 8px;
+  color: var(--accent); font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.exporting .project.skip { opacity: .45; }
+#export-bar {
+  position: fixed; left: 50%; bottom: 16px; z-index: 20; transform: translateX(-50%);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 14px;
+  width: max-content; max-width: calc(100vw - 24px);
+  padding: 10px 16px; background: var(--ink); color: #fff; border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .25); font-size: 14px;
+}
+#export-bar label { display: inline-flex; align-items: center; gap: 5px; }
+#export-bar input[type="tel"] { width: 170px; padding: 5px 8px; border: 0; border-radius: 6px; font: inherit; }
+#export-bar .primary { background: #fff; color: var(--ink); }
+#export-cancel { padding: 7px 10px; border: 0; background: none; color: #c9ced6; }
+
+@media (max-width: 560px) {
+  .project { padding: 18px; }
+  .solve-body, #resume dl { grid-template-columns: 1fr; gap: 0; }
+  .solve-body dt, #resume dt { margin-top: 6px; }
+  .adr { display: block; overflow-x: auto; }
+}
+
+/* ---------- 인쇄 / PDF: 항상 이어보기 형태 ---------- */
+@page { size: A4; margin: 14mm 15mm; }
+@media print {
+  body { font-size: 10.5pt; line-height: 1.55; }
+  .nav, .controls, .pick, .toggle, #export-bar, .more > summary { display: none !important; }
+  .print-only { display: revert; }
+  main { max-width: none; padding: 0; }
+  section { padding-top: 18pt; }
+  #about { padding-top: 0; }
+  h1 { font-size: 20pt; }
+  h2 { font-size: 15pt; padding-bottom: 4pt; border-bottom: 1.5pt solid var(--ink); }
+  .intro { font-size: 10.5pt; max-width: none; }
+  .contact { margin-top: 8pt; font-size: 10pt; }
+  .facts { margin-top: 8pt; }
+  .facts li { padding: 1pt 7pt; font-size: 9pt; }
+  .photo { width: 80pt; border-radius: 6pt; }
+  .site-footer { display: none; }
+  .paper { margin-top: 10pt; padding: 0; border: 0; break-inside: avoid; }
+  .paper h3 { font-size: 12pt; }
+  .awards li { padding: 5pt 0; font-size: 10pt; break-inside: avoid; }
+  .shot { max-height: 150pt; }
+
+  #project-list { display: block; margin-top: 0; }
+  .project { padding: 12pt 0; border: 0; border-bottom: .75pt solid var(--line); border-radius: 0; }
+  .exporting .project.skip { display: none; }
+  .project h3 { font-size: 13pt; }
+  .meta, .role, .results, .solve-body, .more, .project footer { font-size: 9.5pt; }
+  .solve h4 { font-size: 10pt; }
+  .chips li { font-size: 8.5pt; }
+  .adr { font-size: 8.5pt; }
+  .adr tbody tr:nth-child(n+5) { display: none; } /* app.js의 ADR_PRINT_ROWS와 짝 */
+  .note { color: var(--sub); font-size: 8.5pt; }
+  /* 기본은 간략히. 내보내기에서 '자세히'를 고르면 body.print-full */
+  body:not(.print-full) .more { display: none; }
+  .tagline, .role, .chips, .results { break-after: avoid; }
+  .project footer { margin-top: 8pt; break-before: avoid; }
+  /* 구역 제목이 쪽 맨 아래에 혼자 남지 않게: 제목 뒤에 80pt 자리를 확보 */
+  h2 { break-inside: avoid; }
+  #papers { break-inside: avoid; } /* 논문 블록은 80pt보다 커서 구역째 묶는다 */
+  h2::after { content: ""; display: block; height: 80pt; margin-bottom: -80pt; }
+  #about { align-items: flex-start; gap: 16pt; }
+  #resume dl { grid-template-columns: 84pt 1fr; }
+  header, h3, h4, .sub { break-after: avoid; }
+  .solve, .results, .adr tr, #resume .resume-grid > div { break-inside: avoid; }
+  #resume dl { font-size: 10pt; }
+  .resume-grid { grid-template-columns: 1fr 1fr; gap: 14pt 24pt; }
+  a { color: inherit; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
