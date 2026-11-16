@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="900" height="280" role="img" aria-label="톡깨 AI 대화 응답 흐름도">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1a1d21"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2457d6"/></marker>
+    <style>
+      text { font-family: 'Pretendard','Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif; fill: #1a1d21; }
+      .t { font-size: 13px; font-weight: 700; }
+      .s { font-size: 11.5px; fill: #5b6470; }
+      .l { font-size: 11.5px; fill: #2457d6; font-weight: 600; }
+      .box { fill: #fff; stroke: #c9ced6; stroke-width: 1.2; }
+      .soft { fill: #f5f6f8; stroke: #c9ced6; stroke-width: 1.2; }
+      .key { fill: #eaf0fd; stroke: #2457d6; stroke-width: 1.4; }
+      .line { fill: none; stroke: #1a1d21; stroke-width: 1.4; }
+      .re { fill: none; stroke: #2457d6; stroke-width: 1.4; stroke-dasharray: 5 4; }
+    </style>
+  </defs>
+  <rect width="900" height="280" fill="#fff"/>
+
+  <text x="686" y="56" text-anchor="middle" class="l">생성과 검증을 분리</text>
+
+  <rect x="10" y="70" width="100" height="70" rx="8" class="soft"/>
+  <text x="60" y="110" text-anchor="middle" class="t">사용자 발화</text>
+  <path d="M110 105H134" class="line" marker-end="url(#a)"/>
+
+  <rect x="136" y="70" width="134" height="70" rx="8" class="box"/>
+  <text x="203" y="100" text-anchor="middle" class="t">정체 질문 확인</text>
+  <text x="203" y="120" text-anchor="middle" class="s">코드로 판정 · LLM 없음</text>
+  <path d="M270 105H294" class="line" marker-end="url(#a)"/>
+
+  <rect x="296" y="70" width="124" height="70" rx="8" class="box"/>
+  <text x="358" y="100" text-anchor="middle" class="t">답변 생성</text>
+  <text x="358" y="120" text-anchor="middle" class="s">Upstage Solar</text>
+  <path d="M420 105H444" class="line" marker-end="url(#a)"/>
+
+  <rect x="446" y="70" width="134" height="70" rx="8" class="box"/>
+  <text x="513" y="100" text-anchor="middle" class="t">세척 · 형식 검증</text>
+  <text x="513" y="120" text-anchor="middle" class="s">코드로 판정</text>
+  <path d="M580 105H604" class="line" marker-end="url(#a)"/>
+
+  <rect x="606" y="70" width="160" height="70" rx="8" class="key"/>
+  <text x="686" y="100" text-anchor="middle" class="t">관련성 검증</text>
+  <text x="686" y="120" text-anchor="middle" class="s">별도 LLM 호출 (judge)</text>
+  <path d="M766 105H790" class="line" marker-end="url(#a)"/>
+
+  <rect x="792" y="70" width="98" height="70" rx="8" class="soft"/>
+  <text x="841" y="110" text-anchor="middle" class="t">응답</text>
+
+  <!-- 재생성 -->
+  <path d="M513 140V172M686 140V172H358V143" class="re" marker-end="url(#b)"/>
+  <text x="522" y="192" text-anchor="middle" class="l">규칙 위반 또는 관련 없음 → 재생성 (최대 3회)</text>
+
+  <!-- 정체 질문 -->
+  <path d="M203 140V194" class="line" marker-end="url(#a)"/>
+  <text x="195" y="172" text-anchor="end" class="s">정체 질문이면</text>
+  <rect x="136" y="196" width="134" height="40" rx="8" class="soft"/>
+  <text x="203" y="221" text-anchor="middle" class="t">고정 문구로 응답</text>
+
+  <text x="522" y="250" text-anchor="middle" class="s">3회 모두 통과하지 못하면 형식을 통과한 마지막 답변이나 준비된 문구로 대화를 이어 갑니다.</text>
+</svg>

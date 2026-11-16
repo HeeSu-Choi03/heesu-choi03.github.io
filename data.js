@@ -29,6 +29,9 @@ const DATA = {
       role: "백엔드 API와 AWS 인프라 · CI/CD",
       stack: ["Java 21", "Spring Boot 4", "JPA", "MySQL", "AWS", "Docker", "GitHub Actions"],
       repo: "https://github.com/easython-2026/back",
+      image: "img/ilhan-architecture.png",
+      imageWide: true,
+      imageAlt: "일한만큼 AWS 인프라 구성도: ALB, 두 가용 영역의 Auto Scaling EC2, RDS Multi-AZ, GitHub Actions 배포 흐름",
       results: [
         "API 75개 구현 · 배포",
         "ALB + Auto Scaling(2AZ) + RDS Multi-AZ, main 병합 시 서버 롤링 교체와 실패 시 자동 복구",
@@ -90,6 +93,9 @@ const DATA = {
       role: "인증 · 결제 · 뱃지 · 리포트 도메인, AWS 인프라와 CI/CD",
       stack: ["TypeScript", "Node.js", "Express", "Prisma", "MySQL", "Redis", "AWS EC2 · S3", "GitHub Actions"],
       repo: "https://github.com/HeeSu-Choi03/TalkQQuest-backend",
+      image: "img/talkqquest-ai-flow.svg",
+      imageWide: true,
+      imageAlt: "톡깨 AI 대화 응답 흐름: 정체 질문 확인, 답변 생성, 형식 검증, 별도 LLM 관련성 검증, 재생성",
       results: [
         "커밋 163개 · 이슈 68개",
         "인프라 담당이 없던 팀에서 EC2 · S3 · 자동 배포를 처음부터 구축",

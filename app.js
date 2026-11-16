@@ -40,7 +40,7 @@ const projectHtml = (p) => `
     </div>
     <details class="more">
       <summary>구현 내용 · 기술 선택 더 보기</summary>
-      ${p.image ? `<img class="shot" src="${p.image}" alt="${p.imageAlt}" loading="lazy">` : ""}
+      ${p.image ? `<a href="${p.image}" target="_blank" rel="noopener" title="눌러서 원본 크기로 보기"><img class="shot${p.imageWide ? " wide" : ""}" src="${p.image}" alt="${p.imageAlt}" loading="lazy"></a>` : ""}
       <h4 class="sub">구현 내용</h4>
       ${list(p.more.features)}
       ${adrHtml(p.more.adr)}
